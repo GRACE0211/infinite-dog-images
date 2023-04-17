@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="dogs.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Infinite Dog App</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+  <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+  <div id="app" class="app">
+    <div class="header">
+      <h1>{{ title }}</h1>
+      <div class="main">
+        <button type="button" v-on:click="toggleClicked()">
+          🐕
+        </button>
+        <select v-show="clicked" v-model="dogType">
+        <option value="" disabled selected>Please select</option>
+        <option v-for="dogs in dogData">
+          {{ dogs }}
+        </option>
+        </select>
+      </div>
+    </div>
+    <div class="slidediv">
+      <div class="slideshow">
+            <img :src="dogImg" alt="dogs image">
+      </div>
+    </div>
+  </div>
+  <script src="dogs.js"></script>
+</body>
+</html>
